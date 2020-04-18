@@ -1,0 +1,30 @@
+p#notice = notice
+
+.container
+  .row
+    .col-md-12
+      h1 = @item.name
+      
+      table.table.table-dark
+        thead
+          tr
+            th Name
+            th Count
+            th Place
+            th Price
+            th Contact
+          tr
+            th
+              = @item.name
+            th
+              = @item.count
+            th
+              = @item.place
+            th
+              = @item.price
+            th
+              = @item.contact
+
+=> link_to 'Edit', edit_item_path(@item)
+'|
+=< link_to 'Back', items_path

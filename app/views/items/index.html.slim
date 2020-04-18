@@ -1,0 +1,22 @@
+.container
+    .col-md-12
+      p 
+        h2 ပစ္စည်း စာရင်း
+      table.table.table-dark
+        thead
+          tr
+            th = t :item_name
+            th = t :stock_counts
+            th = t :item_price
+      
+        tbody
+          - @items.each do |item|
+            tr
+              td
+                = link_to item.name, item_path(item)
+              td = item.count
+              td = item.price
+      
+      br
+      
+      = link_to 'New Item', new_item_path
